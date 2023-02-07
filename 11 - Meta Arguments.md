@@ -29,3 +29,5 @@ https://developer.hashicorp.com/terraform/language/meta-arguments/module-provide
 ## Lifecycle
 
 * Só pode ser usado em blocos de resource
+
+https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle
