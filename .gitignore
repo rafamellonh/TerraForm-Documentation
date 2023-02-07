@@ -1,0 +1,4 @@
+Azure-Storage/.terraform.lock.hcl
+Azure-Storage/.terraform/providers/registry.terraform.io/hashicorp/azurerm/3.42.0/windows_amd64/terraform-provider-azurerm_v3.42.0_x5.exe
+Meta-Arguments/Count/.terraform/providers/registry.terraform.io/hashicorp/azurerm/3.42.0/windows_amd64/terraform-provider-azurerm_v3.42.0_x5.exe
+*.exe
