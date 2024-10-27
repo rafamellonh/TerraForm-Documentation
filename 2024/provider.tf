@@ -1,4 +1,4 @@
-provider "azurerm" {
+#provider "azurerm" {
     features {
     }
     subscription_id = "b0586674-03cf-4c83-a967-e5d72c607b1a"
