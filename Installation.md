@@ -1,5 +1,7 @@
 ## Ubuntu
 
+[Terraform Docs](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+
 Ensure that your system is up to date and you have installed the gnupg, software-properties-common, and curl packages installed. You will use these packages to verify HashiCorp's GPG signature and install HashiCorp's Debian package repository.
 
 
