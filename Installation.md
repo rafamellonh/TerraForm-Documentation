@@ -55,7 +55,9 @@ $ sudo apt update
 
 Install Terraform from the new repository.
 
-```$ sudo apt-get install terraform```
+```
+$ sudo apt-get install terraform
+```
 
 Tip
 
