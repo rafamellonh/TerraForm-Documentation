@@ -51,6 +51,7 @@ resource "azurerm_network_interface" "nic01" {
     ip_configuration {
         name = "internal"
         private_ip_address_allocation = "Dynamic"
+        subnet_id = azurerm_subnet.sub01.id
     }
     
 }
