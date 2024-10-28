@@ -8,6 +8,8 @@ terraform {
 }
 
 
+
+
 resource "azurerm_virtual_network" "vnet01" {
     address_space = [ "192.168.0.0/16" ]
     location = azurerm_resource_group.Rafael.location
