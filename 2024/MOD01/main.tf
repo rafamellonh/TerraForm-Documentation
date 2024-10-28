@@ -59,7 +59,7 @@ resource "azurerm_network_interface" "nic01" {
 }
 
 resource "azurerm_windows_virtual_machine" "name" {
-    admin_password = "@#Rafa,321@#"
+    admin_password = "@#xxxxx@#"
     admin_username = "rafael.admin"
     location = azurerm_resource_group.Rafael.location
     name = "vm01"
