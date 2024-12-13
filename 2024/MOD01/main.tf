@@ -8,8 +8,6 @@ terraform {
 }
 
 
-
-
 resource "azurerm_virtual_network" "vnet01" {
   address_space       = ["192.168.0.0/16"]
   location            = azurerm_resource_group.Rafael.location
@@ -59,7 +57,7 @@ resource "azurerm_network_interface" "nic01" {
 }
 
 resource "azurerm_windows_virtual_machine" "name" {
-  admin_password = "@#xxxxx@#"
+  admin_password = "@#Rafa,123@#"
   admin_username = "rafael.admin"
   location       = azurerm_resource_group.Rafael.location
   name           = "vm01"
