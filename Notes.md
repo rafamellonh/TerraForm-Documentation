@@ -4,4 +4,4 @@ terraform import azurerm_resource_group.Rafael /subscriptions/<subscription_id>/
 
 
 
-#terraform apply -target=azurerm_resource_group.Rafael
+terraform apply -target=azurerm_resource_group.Rafael
