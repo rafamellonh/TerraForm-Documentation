@@ -1,29 +1,35 @@
-1️⃣ Definir o provedor do Azure
-Primeiro, configure o provedor azurerm (caso ainda não tenha feito):
+# Usando um Grupo de Recursos Existente no Azure com Terraform
 
-hcl
-Copy
-Edit
+Se você já tem um **Resource Group (Grupo de Recursos)** criado no Azure e deseja utilizá-lo no Terraform, siga estas etapas:
+
+## 1️⃣ Configurar o Provedor do Azure
+Antes de referenciar o grupo de recursos, certifique-se de configurar o provedor `azurerm` no Terraform:
+
+```hcl
 provider "azurerm" {
   features {}
 }
-2️⃣ Referenciar um Grupo de Recursos já existente
-Use o recurso data "azurerm_resource_group" para buscar um grupo de recursos já criado:
+```
 
-h
-Copy
-Edit
+---
+
+## 2️⃣ Referenciar um Grupo de Recursos Existente
+Para utilizar um grupo de recursos já criado, utilize o recurso `data "azurerm_resource_group"`:
+
+```hcl
 data "azurerm_resource_group" "meu_rg" {
   name = "nome-do-seu-resource-group"
 }
-Aqui, você está dizendo ao Terraform para buscar as informações desse grupo de recursos existente.
+```
 
-3️⃣ Usar o Grupo de Recursos nos recursos
-Agora, qualquer recurso pode usar esse grupo de recursos existente referenciando data.azurerm_resource_group.meu_rg.name. Exemplo:
+Aqui, estamos buscando informações do grupo de recursos já existente no Azure.
 
-hcl
-Copy
-Edit
+---
+
+## 3️⃣ Usar o Grupo de Recursos nos Recursos do Terraform
+Agora, qualquer recurso pode usar esse grupo de recursos referenciando `data.azurerm_resource_group.meu_rg.name`. Exemplo:
+
+```hcl
 resource "azurerm_storage_account" "meu_storage" {
   name                     = "meustorageaccount"
   resource_group_name      = data.azurerm_resource_group.meu_rg.name
@@ -31,3 +37,16 @@ resource "azurerm_storage_account" "meu_storage" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
+```
+
+---
+
+## 🔹 Explicação
+- `data "azurerm_resource_group" "meu_rg"` → Busca o grupo de recursos já existente.
+- `data.azurerm_resource_group.meu_rg.name` → Usa o nome do grupo de recursos.
+- `data.azurerm_resource_group.meu_rg.location` → Usa a mesma localização do grupo de recursos.
+
+Dessa forma, o Terraform **não tenta recriar o grupo de recursos**, apenas o utiliza para novos recursos.
+
+---
+
