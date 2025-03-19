@@ -1,8 +1,13 @@
-data "azurerm_resource_group" "Rafael" {
-    name = "Rafael"
-  
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "4.23.0"
+    }
+  }
 }
 
-output "resource_group_id" {
-    value = data.azurerm_resource_group.Rafael.id
+module "vnet_module" {
+  source = "./VNET"
+
 }
